@@ -10,6 +10,7 @@ import { ICar, Car } from "../interfaces/car";
 })
 export class CarlistComponent implements OnInit {
   carsData: ICar[];
+  show: boolean;
 
   constructor(private _carAPIService:CarApiService) { }
 
@@ -17,9 +18,9 @@ export class CarlistComponent implements OnInit {
     this._carAPIService.getCarData().subscribe(carsData => {this.carsData = carsData});
   }
 
-  addTheCar(make:string, model:string, year:string, imageURL:string) : boolean{
+  addTheCar(make:string, model:string, year:string, imageURL:string, id: string) : boolean{
     let tempCar:ICar;
-    tempCar = new Car(make, model, year, imageURL);
+    tempCar = new Car(make, model, year, imageURL, id);
     this._carAPIService.addCarData(tempCar);
     return false;
   }
