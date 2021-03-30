@@ -116,7 +116,7 @@
             "production": {
               "devServerTarget": "carsales-nosql:serve:production"
             }
-          }
+          } 
         }
       }
     }
